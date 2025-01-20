@@ -1,0 +1,9 @@
+CREATE TABLE respuestas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    mensaje TEXT NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    solucion BOOLEAN DEFAULT FALSE,
+    topico_id BIGINT NOT NULL,
+    autor_nombre VARCHAR(255) NOT NULL,
+    FOREIGN KEY (topico_id) REFERENCES topicos(id) ON DELETE CASCADE
+);
